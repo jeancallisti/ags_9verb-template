@@ -1,3 +1,5 @@
+#define GUI9VERB //So that other modules can test the presence of this module
+
 // Script header
 // 9-verb MI-style template
 // Version: 1.6.3
@@ -179,7 +181,7 @@ enum eDirection {
   eDir_Down  = eDirectionDown
 };
 
-
+#ifndef LANGUAGES //The languages are a fairly common thing and might be defined by another module prior to this one.
 enum eLanguage {
   eLangEN, 
   eLangDE,
@@ -189,6 +191,7 @@ enum eLanguage {
   eLangPT, 
   eLangNL
 };
+#endif
 
 // ============================= Math & Helper Functions =========================================
 import float Distance(int x1, int y1, int x2, int y2);
@@ -261,8 +264,7 @@ import int any_click_on_door(int door_id, int act_object, int x, int y, Characte
     import int any_click_on_door_special (int door_id, int act_object, int x, int y, CharacterDirection dir, int nr_room, int nr_x, int nr_y, CharacterDirection nr_dir, int opensound=0, int closesound=0, int key, int closevalue);
 #endif
 // ============================= translation ====================================================
-import String clearToSpace(String text);
-import int getInteger();
+
 import function TranslateAction(int action, int tr_lang=eLangEN);
 import function AdjustLanguage();
 import function AdjustGUIText();
@@ -273,3 +275,15 @@ import function AddExtension(char extension);
 import char Extension();
 import function OpenCloseExtension(int door_id);
 import function VariableExtensions();
+
+
+struct GUI9Verb_MiniParser {
+    import static String ClearToSpace(String text);
+    import int GetInteger();
+    import String GetDataStream();
+    import void SetDataStream(String value);
+    
+    //private
+    
+    protected String DataStream;
+};
