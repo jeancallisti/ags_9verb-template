@@ -121,8 +121,12 @@
 #define USE_OBJECT_ORIENTED_AUDIO
 #endif
 
+#ifndef SCR_NO_VALUE
+#define SCR_NO_VALUE 31998 //defined in modern versions of AGS
+#endif
 
-#define A_COUNT_ 10  // Action Button Count (gMainGUI)
+
+//#define A_COUNT_ 10  // Action Button Count (gMainGUI)
 #define X_SPEED 5    // default Player_Speed
 #define MAX_DOORS 99 // How many doors accessed by door script
         
@@ -135,38 +139,46 @@ enum eGlobCond {
   eGlob_InvTalk
 };
 
+
+
+//We try to make as many actions match the native AGS actions.
 enum Action {
-  eGA_LookAt,
-  eGA_TalkTo,
-  eGA_GiveTo,
-  eGA_PickUp,
-  eGA_Use,
-  eGA_Open,
-  eGA_Close,
-  eGA_Push,
-  eGA_Pull,
-  eGA_UseInv,
-  eMA_Default,
-  eMA_WalkTo
+  eGA_LookAt = eModeLookat, //1
+  eGA_TalkTo = eModeTalkto, //3
+  eGA_GiveTo = 7,
+  eGA_PickUp = eModePickup, //5
+  eGA_Use = eModeInteract, //2
+  eGA_Open = 8,
+  eGA_Close = 9,
+  eGA_Push = 10,
+  eGA_Pull = 11,
+  eGA_UseInv = eModeUseinv, //4
+  eMA_Default = eModePointer, //6
+  eMA_WalkTo = eModeWalkto, //0
+  eActionsCount = 12
 };
+
+
 
 #ifnver 3.4
 enum CharacterDirection {
-  eDirectionUp,
-  eDirectionLeft,
-  eDirectionRight,
-  eDirectionDown
+  eDirectionUp = 3, //Make it match values of later AGS versions
+  eDirectionRight = 2,
+  eDirectionLeft = 1,
+  eDirectionDown = 0
+  eDirectionNone  = SCR_NO_VALUE, 
 };
 #endif
 
-// for compatibility reasons
+
+// to make this module retrocompatible with earlier versions of itself (optional)
 enum eDirection {
-  eDir_None  = 0, 
   eDir_Up    = eDirectionUp, 
   eDir_Left  = eDirectionLeft, 
   eDir_Right = eDirectionRight, 
   eDir_Down  = eDirectionDown
 };
+
 
 enum eLanguage {
   eLangEN, 
