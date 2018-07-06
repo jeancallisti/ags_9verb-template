@@ -4361,7 +4361,7 @@ stop]]></Script>
           <ScriptAndHeader>
             <ScriptAndHeader_Header>
               <Script>
-                <FileName>guiscript.ash</FileName>
+                <FileName>GUI9Verb.ash</FileName>
                 <Name>ScummGUI</Name>
                 <Description />
                 <Author>Alle</Author>
@@ -4372,7 +4372,7 @@ stop]]></Script>
             </ScriptAndHeader_Header>
             <ScriptAndHeader_Script>
               <Script>
-                <FileName>guiscript.asc</FileName>
+                <FileName>GUI9Verb.asc</FileName>
                 <Name>9-Verb MI-Style</Name>
                 <Description>9Verb GUI functions</Description>
                 <Author>Authors named in header file</Author>
