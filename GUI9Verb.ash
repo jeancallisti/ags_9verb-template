@@ -201,16 +201,28 @@ struct G9V {
     
     //-------------------- GUI binding ---------------------------
     import static void Init_BindGUIs(GUI* g9Verb );
-    import static void Init_BindControls_Options(GUI* gOptions, 
-                                                GUI* gRestart, 
-                                                GUI* gConfirmExit, 
-                                                Button* OptionsSave,  
-                                                Button* OptionsLoad, 
-                                                Button* OptionsPlay, 
-                                                Button* OptionsQuit, 
-                                                Slider* OptionsSldMusic, 
-                                                Slider* OptionsSldSound, 
-                                                Slider* OptionsSldSpeed);
+    import static void Init_BindControls_Options_Main(  GUI* gOptions, 
+                                                        Button* OptionsSave,  
+                                                        Button* OptionsLoad, 
+                                                        Button* OptionsPlay, 
+                                                        Button* OptionsQuit, 
+                                                        Button* OptionsRestart, 
+                                                        Slider* OptionsSldMusic, 
+                                                        Slider* OptionsSldSound, 
+                                                        Slider* OptionsSldSpeed, 
+                                                        Label* OptionsTitle,
+                                                        Label* OptionsMusic,
+                                                        Label* OptionsSound,
+                                                        Label* OptionsSpeed,
+                                                        Button* OptionsDefault);
+    
+                                                
+    import static void Init_BindControls_Other( GUI* gRestart, 
+                                                        GUI* gConfirmExit, 
+                                                        Label* gPausedText,
+                                                        Label* gConfirmexitText,
+                                                        Label* gRestartText);
+                                              
     import static void Init_BindControls_Save(  GUI* gSave,
                                                 Button* SaveCancel,
                                                 Button* SaveOK,
@@ -218,6 +230,7 @@ struct G9V {
                                                 Button* SaveScrollDown,
                                                 ListBox* SaveListBox,
                                                 Label* SaveLabel, 
+                                                Label* SaveTitle, 
                                                 GUI* gSavetextbox);
     
     import static void Init_BindControls_Restore(   GUI* gRestore, 
@@ -225,7 +238,8 @@ struct G9V {
                                                     //Button* RestoreOK,
                                                     Button* RestoreScrollUp,
                                                     Button* RestoreScrollDown,
-                                                    ListBox* RestoreListBox
+                                                    ListBox* RestoreListBox, 
+                                                    Label* RestoreTitle
                                                     );
     import static void Init_BindButtons_Inventory(Button* InvUp, Button* InvDown);
 };
