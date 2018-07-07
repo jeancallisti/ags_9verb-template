@@ -4361,6 +4361,30 @@ stop]]></Script>
           <ScriptAndHeader>
             <ScriptAndHeader_Header>
               <Script>
+                <FileName>GUILoadSave.ash</FileName>
+                <Name />
+                <Description />
+                <Author />
+                <Version />
+                <Key>932084641</Key>
+                <IsHeader>True</IsHeader>
+              </Script>
+            </ScriptAndHeader_Header>
+            <ScriptAndHeader_Script>
+              <Script>
+                <FileName>GUILoadSave.asc</FileName>
+                <Name />
+                <Description />
+                <Author />
+                <Version />
+                <Key>932084641</Key>
+                <IsHeader>False</IsHeader>
+              </Script>
+            </ScriptAndHeader_Script>
+          </ScriptAndHeader>
+          <ScriptAndHeader>
+            <ScriptAndHeader_Header>
+              <Script>
                 <FileName>GUI9Verb.ash</FileName>
                 <Name>ScummGUI</Name>
                 <Description />
