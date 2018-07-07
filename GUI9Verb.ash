@@ -193,10 +193,27 @@ enum eLanguage {
 };
 #endif
 
-// ============================= Math & Helper Functions =========================================
-import float Distance(int x1, int y1, int x2, int y2);
-import int Absolute(int value);
-import int Offset(int point1, int point2);
+// ============================= Math Functions ==================================================
+
+
+
+
+//static extenders only in 3.4+
+#ifver 3.4 
+import float Distance(static Maths,  int x1, int y1, int x2, int y2);
+import int Absolute(static Maths,  int value);
+import int Offset(static Maths, int point1, int point2);
+#endif
+
+#ifnver 3.4
+import float GUI9Verb_Math_Distance(int x1, int y1, int x2, int y2);
+import int GUI9Verb_Math_Absolute(int value);
+import int GUI9Verb_Math_Offset(int point1, int point2);
+#endif
+
+//====================================  Helper Functions =========================================
+
+
 import int getButtonAction(int action);
 import function disable_gui();
 import function enable_gui();
