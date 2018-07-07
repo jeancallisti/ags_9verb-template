@@ -193,6 +193,72 @@ enum eLanguage {
 };
 #endif
 
+
+
+
+
+struct G9V {
+    
+    //-------------------- GUI binding ---------------------------
+    import static void Init_BindGUIs(GUI* g9Verb );
+    import static void Init_BindControls_Options(GUI* gOptions, 
+                                                GUI* gRestart, 
+                                                GUI* gConfirmExit, 
+                                                Button* OptionsSave,  
+                                                Button* OptionsLoad, 
+                                                Button* OptionsPlay, 
+                                                Button* OptionsQuit, 
+                                                Slider* OptionsSldMusic, 
+                                                Slider* OptionsSldSound, 
+                                                Slider* OptionsSldSpeed);
+    import static void Init_BindControls_Save(  GUI* gSave,
+                                                Button* SaveCancel,
+                                                Button* SaveOK,
+                                                Button* SaveScrollUp,
+                                                Button* SaveScrollDown,
+                                                ListBox* SaveListBox,
+                                                Label* SaveLabel, 
+                                                GUI* gSavetextbox);
+    
+    import static void Init_BindControls_Restore(   GUI* gRestore, 
+                                                    Button* RestoreCancel,
+                                                    //Button* RestoreOK,
+                                                    Button* RestoreScrollUp,
+                                                    Button* RestoreScrollDown,
+                                                    ListBox* RestoreListBox
+                                                    );
+    import static void Init_BindButtons_Inventory(Button* InvUp, Button* InvDown);
+};
+    
+
+
+struct G9V_Events
+{
+    import static void OnKeyPress(eKeyCode keycode);
+    
+    import static void OnClick_Action(GUIControl* control);
+    import static void OnClick_MainOptionsButton();
+    import static void OnClick_ScrollInv(GUIControl* control);
+    import static void OnClick_Option(GUIControl* control);
+    import static void OnClick_OptionRestart();
+    
+    
+    import static void OnClick_SaveTextBox();
+    import static void OnClick_SaveListBox();
+    import static void OnClick_Save(GUIControl* control);
+    import static void OnClick_RestoreListBox();
+    import static void OnClick_Restore(GUIControl* control);
+    import static void OnClick_OptionsSliderSpeed();
+    import static void OnClick_OptionsSliderSound();
+    import static void OnClick_OptionsSliderMusic();
+    import static void OnClick_OptionsDefault(GUIControl* control);
+
+    
+};
+
+
+
+
 // ============================= Math Functions ==================================================
 
 
@@ -206,9 +272,9 @@ import int Offset(static Maths, int point1, int point2);
 #endif
 
 #ifnver 3.4
-import float GUI9Verb_Math_Distance(int x1, int y1, int x2, int y2);
-import int GUI9Verb_Math_Absolute(int value);
-import int GUI9Verb_Math_Offset(int point1, int point2);
+import float G9V_Math_Distance(int x1, int y1, int x2, int y2);
+import int G9V_Math_Absolute(int value);
+import int G9V_Math_Offset(int point1, int point2);
 #endif
 
 //====================================  Helper Functions =========================================
@@ -294,7 +360,7 @@ import function OpenCloseExtension(int door_id);
 import function VariableExtensions();
 
 
-struct GUI9Verb_MiniParser {
+struct G9V_MiniParser {
     import static String ClearToSpace(String text);
     import int GetInteger();
     import String GetDataStream();
